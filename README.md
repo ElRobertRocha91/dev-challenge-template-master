@@ -1,7 +1,7 @@
 # Desafío para Dev
 
-Nombre postulante: [TU NOMBRE]
-Link a la app en producción: [LINK DEL DEPLOY]
+Nombre postulante: ROBERTO ROCHA
+Link a la app en producción: https://dev-challenge-template-master-puce.vercel.app/
 
 ## Instrucciones
 

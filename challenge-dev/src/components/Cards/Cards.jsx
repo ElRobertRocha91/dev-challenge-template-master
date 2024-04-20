@@ -3,7 +3,7 @@ import Card from "../Card/Card";
 function Cards({ data }) {
     // console.log(data);
     return (
-        <div>
+        <div className="grid grid-cols-4 gap-4">
             {data.characters.results.map(character => (
                 <Card
                     key={character.id}

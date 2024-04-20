@@ -1,6 +1,6 @@
 function CardDetail({ data }){
     return (
-        <div>
+        <div className="flex justify-center">
             {data && (
                 <div>
                     <img src={data.character.image} alt={data.character.name}/>

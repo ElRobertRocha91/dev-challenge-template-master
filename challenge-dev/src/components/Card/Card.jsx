@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
 
 function Card({ id, image, name, gender }) {
-    // console.log(id);
+    
     return (
-        <div>
-            <img src={image} alt={name} />
+        <div className="border-4 border-sky-500 rounded-lg hover:-translate-y-6">
+            <img src={image} alt={name} className="rounded-md"/>
             <Link to={`/detail/${id}`}>
-                <h3>{name}</h3>
+                <h3 className="text-center">{name}</h3>
             </Link>
             <br />
-            <h5>{gender}</h5>
+            <h5 className="text-center">{gender}</h5>
         </div>
     )
 }

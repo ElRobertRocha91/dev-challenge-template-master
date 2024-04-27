@@ -24,8 +24,8 @@ function Detail(){
     if(error) return <p>Error: {error.message}</p>
 
     return (
-        <div className=''>
-            <h3>Detail of Character</h3>
+        <div className='p-4'>
+            <h3 className="text-center">Detail of Character</h3>
             <CardDetail data={data}/>
         </div>
     )

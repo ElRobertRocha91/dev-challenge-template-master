@@ -3,6 +3,7 @@ import { useState } from "react";
 import Search from "../Search/Search";
 import Cards from "../Cards/Cards";
 import Filters from "../Filters/Filters";
+import Loading from "../Loading/Loading";
 
 const GET_CHARACTERS = gql`
 query GetCharacters($page: Int!, $filter: FilterCharacter) {
@@ -31,7 +32,7 @@ function DisplayCharacters() {
     species: "",
     gender: ""
   });
-  
+
   const { loading, error, data, } = useQuery(GET_CHARACTERS, {
     variables: {
       page: page,
@@ -67,9 +68,9 @@ function DisplayCharacters() {
       species: "",
       gender: ""
     });
-  } 
+  }
 
-  if (loading) return <p>Loading...</p>
+  if (loading) return <Loading />
   if (error) return <p>Error: {error.message}</p>
 
   return (
@@ -77,9 +78,15 @@ function DisplayCharacters() {
       <Search value={name} handleChange={handleChange} handleSearch={handleSearch} />
       <Filters value={filter} handleFilter={handleFilter} handleClean={handleClean} />
       <div className="flex justify-around p-4">
-        <button disabled={page === 1} onClick={() => setPage((num) => num - 1)}>Previous</button>
-        <span>Page {page}</span>
-        <button disabled={!data.characters.info.next} onClick={() => setPage((num) => num + 1)}>Next</button>
+        <button disabled={page === 1} onClick={() => setPage((num) => num - 1)}
+          className="rounded-lg px-8 border-4 border-lime-500 bg-green-500">
+          Prev
+        </button>
+        <span className="text-white">Page {page}</span>
+        <button disabled={!data.characters.info.next} onClick={() => setPage((num) => num + 1)}
+          className="rounded-lg px-8 border-4 border-lime-500 bg-green-500">
+          Next
+        </button>
       </div>
       <Cards data={data} />
     </div>

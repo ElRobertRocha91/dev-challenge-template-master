@@ -12,7 +12,7 @@ function Navbar() {
                     </div>
                     <div className='block'>
                         <div className='ml-4 flex items-center space-x-4'>
-                            <NavLink exact="true" to="/" className='text-white hover:bg-white hover:text-green-500 font-bold rounded-lg p-2'>Home</NavLink>
+                            <NavLink exact="true" to="/" className='text-white hover:bg-lime-200 hover:text-green-500 font-bold rounded-lg p-2'>Home</NavLink>
                         </div>
                     </div>
                 </div>
